@@ -10,7 +10,8 @@
     "build": "refine build",
     "start": "refine start",
     "lint": "next lint",
-    "refine": "refine dev"
+    "refine": "refine dev",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",

@@ -10,6 +10,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -48,7 +49,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
                     // CSRF disabled for stateless REST API using JWT tokens
                     .csrf(AbstractHttpConfigurer::disable)
                     .authorizeHttpRequests(request -> request
-                            .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui-html", "/api/v1/files/**", "/rest/auth/**").permitAll()
+                            .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui-html", "/rest/auth/**").permitAll()
+                            .requestMatchers(HttpMethod.POST, "/api/v1/files").authenticated()
+                            .requestMatchers("/api/v1/files/**").permitAll()
                             .requestMatchers("/api/v1/admin/**").hasAuthority("ADMIN")
                             .anyRequest().authenticated()
                     )
@@ -57,6 +60,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
                     )
                     .exceptionHandling(exception -> exception
                             .authenticationEntryPoint(jwtAuthEntrypoint)
+                            .accessDeniedHandler((req, res, ex) -> {
+                                res.setStatus(403);
+                                res.setContentType("application/json");
+                                res.getWriter().write("{\"detail\":\"Access denied\"}");
+                            })
                     )
                     .headers(headers -> headers
                             .contentTypeOptions(contentTypeOptions -> contentTypeOptions.disable())

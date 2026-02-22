@@ -3,6 +3,7 @@ package com.up.asset_holder_api.integration;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.up.asset_holder_api.service.AssetService;
 import com.up.asset_holder_api.service.VerificationService;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,11 +13,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Integration tests for blockchain operations.
- * Tests asset creation, transfer, and verification workflows.
- * 
- * Note: These tests require a running Hyperledger Fabric network.
- * Run with: @ActiveProfiles("test") and ensure test network is available.
+ * Require a running Hyperledger Fabric network and CA cert at configured path.
+ *
+ * Excluded from default {@code mvn test}; run with Fabric available using:
+ * {@code mvn test -DexcludedGroups=}
+ * or enable the "integration" Maven profile.
  */
+@Tag("integration")
 @SpringBootTest
 @ActiveProfiles("test")
 public class BlockchainIntegrationTest {

@@ -124,17 +124,21 @@ public class AssetServiceImp implements AssetService {
             asset.setUsername(String.valueOf(asset.getAssignTo()));
             log.debug("Generated asset ID: {} for asset: {}", assetId, asset.getAssetName());
 
-            // WRITE => submitTransaction
+            // WRITE => submitTransaction (chaincode expects non-null strings)
+            String unit = asset.getUnit() != null ? asset.getUnit() : "";
+            String condition = asset.getCondition() != null ? asset.getCondition() : "";
+            String attachment = asset.getAttachment() != null ? asset.getAttachment() : "";
+            String depName = asset.getDepName() != null ? asset.getDepName() : "default";
             contract.submitTransaction(
                     "CreateAsset",
                     asset.getAssetId(),
                     asset.getAssetName(),
-                    asset.getUnit(),
-                    asset.getCondition(),
-                    asset.getAttachment(),
+                    unit,
+                    condition,
+                    attachment,
                     String.valueOf(asset.getAssignTo()),
                     asset.getUsername(),
-                    asset.getDepName(),
+                    depName,
                     String.valueOf(asset.getQty())
             );
 
@@ -182,16 +186,20 @@ public class AssetServiceImp implements AssetService {
 
             asset.setUsername(String.valueOf(asset.getAssignTo()));
 
+            String unit = asset.getUnit() != null ? asset.getUnit() : "";
+            String condition = asset.getCondition() != null ? asset.getCondition() : "";
+            String attachment = asset.getAttachment() != null ? asset.getAttachment() : "";
+            String depName = asset.getDepName() != null ? asset.getDepName() : "default";
             contract.submitTransaction(
                     "UpdateAsset",
                     id,
                     asset.getAssetName(),
-                    asset.getUnit(),
-                    asset.getCondition(),
-                    asset.getAttachment(),
+                    unit,
+                    condition,
+                    attachment,
                     String.valueOf(asset.getAssignTo()),
                     asset.getUsername(),
-                    asset.getDepName(),
+                    depName,
                     String.valueOf(asset.getQty())
             );
 
@@ -372,9 +380,19 @@ public class AssetServiceImp implements AssetService {
         try (Gateway gateway = GatewayHelperV1.connect(user.getUsername())) {
             Contract contract = fabricContract(gateway);
 
+            // Verify asset exists first so we return 404 for non-existent id (GetAssetHistory may still return data)
+            try {
+                contract.evaluateTransaction("QueryAsset", id);
+            } catch (ContractException e) {
+                log.error("Asset not found for history: {} - {}", id, e.getMessage());
+                throw new NotFoundException("Asset not found: " + id + " (" + e.getMessage() + ")");
+            }
+
             byte[] result = contract.evaluateTransaction("GetAssetHistory", id);
             return MAPPER.readTree(new String(result, StandardCharsets.UTF_8));
 
+        } catch (NotFoundException e) {
+            throw e;
         } catch (ContractException e) {
             log.error("Asset not found for history: {} - {}", id, e.getMessage());
             throw new NotFoundException("Asset not found: " + id + " (" + e.getMessage() + ")");

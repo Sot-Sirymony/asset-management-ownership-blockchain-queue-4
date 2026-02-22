@@ -28,7 +28,7 @@ public class AssetController {
 
     @GetMapping("/user/getAsset/{id}")
     @Operation(summary = "View asset by id")
-    public ResponseEntity<ApiResponse<JsonNode>> getAssetById(@RequestParam("id") String id) throws IOException {
+    public ResponseEntity<ApiResponse<JsonNode>> getAssetById(@PathVariable("id") String id) throws IOException {
         ApiResponse<JsonNode> res = ApiResponse.<JsonNode>builder()
                 .message("Success")
                 .payload(assetService.getAssetById(id))
@@ -65,7 +65,7 @@ public class AssetController {
 
     @GetMapping("/admin/getHistoryById/{id}")
     @Operation(summary = "Get history asset by id")
-    public ResponseEntity<ApiResponse<JsonNode>> getHistoryById(@RequestParam("id") String id) throws IOException {
+    public ResponseEntity<ApiResponse<JsonNode>> getHistoryById(@PathVariable("id") String id) throws IOException {
         ApiResponse<JsonNode> res = ApiResponse.<JsonNode>builder()
                 .message("Success")
                 .payload(assetService.getHistoryById(id))

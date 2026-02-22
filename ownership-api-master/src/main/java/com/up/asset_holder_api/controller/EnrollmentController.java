@@ -7,6 +7,7 @@ import com.up.asset_holder_api.model.request.UserPassword;
 import com.up.asset_holder_api.model.request.UserRegister;
 import com.up.asset_holder_api.model.request.UserRequest;
 import com.up.asset_holder_api.model.response.ApiResponse;
+import com.up.asset_holder_api.exception.NotFoundException;
 import com.up.asset_holder_api.model.response.UserRequestResponse;
 import com.up.asset_holder_api.model.response.UserResponse;
 import com.up.asset_holder_api.service.EnrollmentService;
@@ -74,9 +75,13 @@ public class EnrollmentController {
     @GetMapping("/admin/getUser/{id}")
     @Operation(summary = "Admin and user view user profile to update")
     public ResponseEntity<ApiResponse<UserResponse>> getUser(@PathVariable("id") Integer id) {
+        UserResponse user = enrollmentService.getUserById(id);
+        if (user == null) {
+            throw new NotFoundException("User not found: " + id);
+        }
         ApiResponse<UserResponse> res = ApiResponse.<UserResponse>builder()
-                .message("Create user successfully")
-                .payload(enrollmentService.getUserById(id))
+                .message("User retrieved successfully")
+                .payload(user)
                 .timestamp(new Timestamp(System.currentTimeMillis()))
                 .httpStatus(HttpStatus.OK)
                 .build();

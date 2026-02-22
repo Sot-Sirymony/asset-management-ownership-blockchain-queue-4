@@ -10,6 +10,7 @@ import com.up.asset_holder_api.repository.UserRepository;
 import com.up.asset_holder_api.service.AuthService;
 import com.up.asset_holder_api.utils.GetCurrentUser;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
@@ -18,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 
+@Slf4j
 @Service
 @AllArgsConstructor
 public class AuthServiceImpl implements AuthService {
@@ -35,16 +37,19 @@ public class AuthServiceImpl implements AuthService {
 
         final User userDetails = appUserRepository.findUserByUsername(authRequest.getUsername());
 
-        if (userDetails == null){
-            throw new NotFoundException( "Username not exists");
+        if (userDetails == null) {
+            log.warn("Login failed: username not found, username={}", authRequest.getUsername());
+            throw new NotFoundException("Username not exists");
         }
 
         try {
             authenticate(authRequest.getUsername(), authRequest.getPassword());
         } catch (Exception e) {
-            if(e.getMessage().contains("USER_DISABLED")) {
+            if (e.getMessage() != null && e.getMessage().contains("USER_DISABLED")) {
+                log.warn("Login failed: account disabled, username={}", authRequest.getUsername());
                 throw new NotFoundException("Account Disabled");
             }
+            log.warn("Login failed: invalid password, username={}", authRequest.getUsername());
             throw new NotFoundException("Password incorrect");
         }
 

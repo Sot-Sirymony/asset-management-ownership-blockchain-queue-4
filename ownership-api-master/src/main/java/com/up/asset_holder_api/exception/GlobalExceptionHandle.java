@@ -79,13 +79,27 @@ public class GlobalExceptionHandle {
     }
 
     /**
+     * Handles IllegalStateException (e.g. enrollment or gateway setup failure) - returns 503.
+     */
+    @ExceptionHandler(IllegalStateException.class)
+    @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
+    public ProblemDetail handleIllegalStateException(IllegalStateException e) {
+        log.warn("Service state error: {}", e.getMessage());
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.SERVICE_UNAVAILABLE,
+                "Service temporarily unavailable. Please try again later.");
+        problemDetail.setTitle("Service Unavailable");
+        problemDetail.setProperty("timestamp", System.currentTimeMillis());
+        return problemDetail;
+    }
+
+    /**
      * Handles all other unhandled exceptions (500 Internal Server Error).
      */
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ProblemDetail handleGenericException(Exception e) {
         log.error("Unexpected error occurred", e);
-        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, 
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR,
                 "An unexpected error occurred. Please try again later.");
         problemDetail.setTitle("Internal Server Error");
         problemDetail.setProperty("timestamp", System.currentTimeMillis());

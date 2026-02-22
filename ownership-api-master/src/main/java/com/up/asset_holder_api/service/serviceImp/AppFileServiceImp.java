@@ -13,7 +13,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Stream;
 
 
 @Service
@@ -50,5 +53,19 @@ public class AppFileServiceImp implements AppFileService {
             throw new NotFoundException("File not found");
         }
         return new ByteArrayResource(Files.readAllBytes(path));
+    }
+
+    @Override
+    public List<String> listFileNames() {
+        if (!Files.exists(path)) {
+            return new ArrayList<>();
+        }
+        try (Stream<Path> stream = Files.list(path)) {
+            List<String> names = new ArrayList<>();
+            stream.filter(Files::isRegularFile).forEach(p -> names.add(p.getFileName().toString()));
+            return names;
+        } catch (IOException e) {
+            return new ArrayList<>();
+        }
     }
 }

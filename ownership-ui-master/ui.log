@@ -4,6 +4,37 @@
 
 ╭──────────────────────────────────────────────────────────────────────────────╮│                                                                              ││   — Refine Devtools beta version is out! To install in your project, just    ││   run npm run refine devtools init. https://s.refine.dev/devtools-beta       ││                                                                              ││   — Hello from Refine team! Hope you enjoy! Join our Discord community to    ││   get help and discuss with other users. https://discord.gg/refine           ││                                                                              │╰──────────────────────────────────────────────────────────────────────────────╯
 
+                                Update Available                                
+
+- Current: The version of the package that is currently installed
+- Wanted: The maximum version of the package that satisfies the semver range specified in `package.json`
+- Latest: The latest version of the package available on npm
+[90m┌────────────────────────────[39m[90m┬─────────[39m[90m┬─────────[39m[90m┬─────────[39m[90m┬───────────────────┐[39m
+[90m│[39m[34m name                       [39m[90m│[39m[34m current [39m[90m│[39m[34m wanted  [39m[90m│[39m[34m latest  [39m[90m│[39m[34m changelog         [39m[90m│[39m
+[90m├────────────────────────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼───────────────────┤[39m
+[90m│[39m @refinedev/antd            [90m│[39m 5.43.1  [90m│[39m 5.47.0  [90m│[39m 6.0.3   [90m│[39m https://c.refine… [90m│[39m
+[90m├────────────────────────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼───────────────────┤[39m
+[90m│[39m @refinedev/cli             [90m│[39m 2.16.38 [90m│[39m 2.16.51 [90m│[39m 2.16.51 [90m│[39m https://c.refine… [90m│[39m
+[90m├────────────────────────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼───────────────────┤[39m
+[90m│[39m @refinedev/core            [90m│[39m 4.54.1  [90m│[39m 4.58.0  [90m│[39m 5.0.9   [90m│[39m https://c.refine… [90m│[39m
+[90m├────────────────────────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼───────────────────┤[39m
+[90m│[39m @refinedev/devtools        [90m│[39m 1.2.8   [90m│[39m 1.2.17  [90m│[39m 2.0.4   [90m│[39m https://c.refine… [90m│[39m
+[90m├────────────────────────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼───────────────────┤[39m
+[90m│[39m @refinedev/kbar            [90m│[39m 1.3.12  [90m│[39m 1.3.17  [90m│[39m 2.0.1   [90m│[39m https://c.refine… [90m│[39m
+[90m├────────────────────────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼───────────────────┤[39m
+[90m│[39m @refinedev/nextjs-router   [90m│[39m 6.1.0   [90m│[39m 6.2.3   [90m│[39m 7.0.4   [90m│[39m https://c.refine… [90m│[39m
+[90m├────────────────────────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼───────────────────┤[39m
+[90m│[39m @refinedev/react-router-v6 [90m│[39m 4.6.0   [90m│[39m 4.6.2   [90m│[39m 4.6.2   [90m│[39m https://c.refine… [90m│[39m
+[90m├────────────────────────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼─────────[39m[90m┼───────────────────┤[39m
+[90m│[39m @refinedev/simple-rest     [90m│[39m 5.0.8   [90m│[39m 5.0.11  [90m│[39m 6.0.1   [90m│[39m https://c.refine… [90m│[39m
+[90m└────────────────────────────[39m[90m┴─────────[39m[90m┴─────────[39m[90m┴─────────[39m[90m┴───────────────────┘[39m
+                To update `Refine` packages with wanted version                
+- Getting package manager...
+                Run the following command: npm run refine update               
+
+
+
+
 ✗ Refine Devtools server (http) failed to start. Port 5001 is already in use.
 
 ℹ You can change the port by setting the REFINE_DEVTOOLS_PORT environment variable.
@@ -15,7 +46,7 @@
   - Environments: .env
 
  [32m[1m✓[22m[39m Starting...
- [32m[1m✓[22m[39m Ready in 2.3s
+ [32m[1m✓[22m[39m Ready in 1680ms
  [37m[1m○[22m[39m Compiling / ...
 Browserslist: caniuse-lite is outdated. Please run:
   npx update-browserslist-db@latest
@@ -23,32 +54,43 @@ Browserslist: caniuse-lite is outdated. Please run:
 
 [1m[33mwarn[39m[22m - As of Tailwind CSS v3.3, the `@tailwindcss/line-clamp` plugin is now included by default.
 [1m[33mwarn[39m[22m - Remove it from the `plugins` array in your configuration to eliminate this warning.
- [32m[1m✓[22m[39m Compiled / in 10.4s (9025 modules)
- GET / [32m200[39m in 10775ms
- [32m[1m✓[22m[39m Compiled in 622ms (4890 modules)
- GET / [32m200[39m in 107ms
+ [32m[1m✓[22m[39m Compiled / in 9.2s (8986 modules)
+ GET / [32m200[39m in 9478ms
+ [32m[1m✓[22m[39m Compiled in 731ms (4890 modules)
+ GET / [32m200[39m in 28ms
+ GET / [32m200[39m in 166ms
+ GET / [32m200[39m in 171ms
+ GET / [32m200[39m in 172ms
+ GET / [32m200[39m in 127ms
+ GET / [32m200[39m in 171ms
  [37m[1m○[22m[39m Compiling /api/auth/[...nextauth] ...
- [32m[1m✓[22m[39m Compiled /api/auth/[...nextauth] in 1359ms (4397 modules)
- GET /api/auth/session [32m200[39m in 1719ms
- GET /api/auth/session [32m200[39m in 7ms
- GET /api/auth/providers [32m200[39m in 33ms
- GET /api/auth/csrf [32m200[39m in 8ms
-Auth error: TypeError: fetch failed
-[90m    at node:internal/deps/undici/undici:13502:13[39m
-[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
-    at async loginService (webpack-internal:///(rsc)/./src/app/components/service/auth.service.js:7:17)
-    at async Object.authorize (webpack-internal:///(rsc)/./src/app/api/auth/[...nextauth]/authOptions.js:33:43)
-    at async Object.callback (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/routes/callback.js:328:14)
-    at async AuthHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/index.js:260:28)
-    at async NextAuthRouteHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:57:28)
-    at async NextAuth._args$ (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:89:16)
-    at async [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:55778
-    at async eO.execute [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:46527[90m)[39m
-    at async eO.handle [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:57112[90m)[39m
-    at async doRender [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1352:42[90m)[39m
-    at async cacheEntry.responseCache.get.routeKind [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1562:40[90m)[39m
-    at async DevServer.renderToResponseWithComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1482:28[90m)[39m
-    at async DevServer.renderPageComponent [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1908:24[90m)[39m
+ [32m[1m✓[22m[39m Compiled /api/auth/[...nextauth] in 1393ms (4397 modules)
+ GET / [32m200[39m in 419ms
+ GET / [32m200[39m in 421ms
+ GET / [32m200[39m in 420ms
+ GET / [32m200[39m in 423ms
+ GET /api/auth/session [32m200[39m in 2082ms
+ GET /api/auth/providers [32m200[39m in 664ms
+ GET /api/auth/session [32m200[39m in 57ms
+ GET /api/auth/csrf [32m200[39m in 57ms
+ POST /api/auth/callback/credentials [32m200[39m in 48ms
+ GET /api/auth/session [32m200[39m in 46ms
+ GET /api/auth/session [32m200[39m in 57ms
+ GET /api/auth/session [32m200[39m in 66ms
+ GET /api/auth/session [32m200[39m in 66ms
+ GET /api/auth/session [32m200[39m in 59ms
+ GET /api/auth/session [32m200[39m in 47ms
+ [31m[1m⨯[22m[39m SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at loadManifest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-manifest.js:36:25[90m)[39m
+    at getMaybePagePath [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:57:59[90m)[39m
+    at getPagePath [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:92:22[90m)[39m
+    at requirePage [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:99:22[90m)[39m
+    at [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-components.js:98:84
+    at async loadComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-components.js:98:26[90m)[39m
+    at async DevServer.findPageComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/next-server.js:709:36[90m)[39m
+    at async DevServer.findPageComponents [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/dev/next-dev-server.js:577:20[90m)[39m
+    at async DevServer.renderPageComponent [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1894:24[90m)[39m
     at async DevServer.renderToResponseImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1946:32[90m)[39m
     at async DevServer.pipeImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:921:25[90m)[39m
     at async NextNodeServer.handleCatchallRenderRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/next-server.js:272:17[90m)[39m
@@ -60,33 +102,19 @@ Auth error: TypeError: fetch failed
     at async handleRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:350:24[90m)[39m
     at async requestHandlerImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:374:13[90m)[39m
     at async Server.requestListener [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/start-server.js:141:13[90m)[39m {
-  [cause]: AggregateError [ECONNREFUSED]: 
-  [90m    at internalConnectMultiple (node:net:1139:18)[39m
-  [90m    at afterConnectMultiple (node:net:1712:7)[39m
-  [90m    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)[39m {
-    code: [32m'ECONNREFUSED'[39m,
-    [errors]: [ [36m[Error][39m, [36m[Error][39m ]
-  }
+  page: [32m'/api/auth/session'[39m
 }
- POST /api/auth/callback/credentials [33m401[39m in 19ms
- GET /api/auth/providers [32m200[39m in 9ms
- GET /api/auth/csrf [32m200[39m in 4ms
-Auth error: TypeError: fetch failed
-[90m    at node:internal/deps/undici/undici:13502:13[39m
-[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
-    at async loginService (webpack-internal:///(rsc)/./src/app/components/service/auth.service.js:7:17)
-    at async Object.authorize (webpack-internal:///(rsc)/./src/app/api/auth/[...nextauth]/authOptions.js:33:43)
-    at async Object.callback (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/routes/callback.js:328:14)
-    at async AuthHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/index.js:260:28)
-    at async NextAuthRouteHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:57:28)
-    at async NextAuth._args$ (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:89:16)
-    at async [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:55778
-    at async eO.execute [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:46527[90m)[39m
-    at async eO.handle [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:57112[90m)[39m
-    at async doRender [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1352:42[90m)[39m
-    at async cacheEntry.responseCache.get.routeKind [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1562:40[90m)[39m
-    at async DevServer.renderToResponseWithComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1482:28[90m)[39m
-    at async DevServer.renderPageComponent [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1908:24[90m)[39m
+ [31m[1m⨯[22m[39m SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at loadManifest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-manifest.js:36:25[90m)[39m
+    at getMaybePagePath [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:57:59[90m)[39m
+    at getPagePath [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:92:22[90m)[39m
+    at requirePage [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:99:22[90m)[39m
+    at [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-components.js:98:84
+    at async loadComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-components.js:98:26[90m)[39m
+    at async DevServer.findPageComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/next-server.js:709:36[90m)[39m
+    at async DevServer.findPageComponents [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/dev/next-dev-server.js:577:20[90m)[39m
+    at async DevServer.renderPageComponent [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1894:24[90m)[39m
     at async DevServer.renderToResponseImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1946:32[90m)[39m
     at async DevServer.pipeImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:921:25[90m)[39m
     at async NextNodeServer.handleCatchallRenderRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/next-server.js:272:17[90m)[39m
@@ -98,33 +126,19 @@ Auth error: TypeError: fetch failed
     at async handleRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:350:24[90m)[39m
     at async requestHandlerImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:374:13[90m)[39m
     at async Server.requestListener [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/start-server.js:141:13[90m)[39m {
-  [cause]: AggregateError [ECONNREFUSED]: 
-  [90m    at internalConnectMultiple (node:net:1139:18)[39m
-  [90m    at afterConnectMultiple (node:net:1712:7)[39m
-  [90m    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)[39m {
-    code: [32m'ECONNREFUSED'[39m,
-    [errors]: [ [36m[Error][39m, [36m[Error][39m ]
-  }
+  page: [32m'/api/auth/session'[39m
 }
- POST /api/auth/callback/credentials [33m401[39m in 6ms
- GET /api/auth/providers [32m200[39m in 13ms
- GET /api/auth/csrf [32m200[39m in 4ms
-Auth error: TypeError: fetch failed
-[90m    at node:internal/deps/undici/undici:13502:13[39m
-[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
-    at async loginService (webpack-internal:///(rsc)/./src/app/components/service/auth.service.js:7:17)
-    at async Object.authorize (webpack-internal:///(rsc)/./src/app/api/auth/[...nextauth]/authOptions.js:33:43)
-    at async Object.callback (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/routes/callback.js:328:14)
-    at async AuthHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/index.js:260:28)
-    at async NextAuthRouteHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:57:28)
-    at async NextAuth._args$ (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:89:16)
-    at async [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:55778
-    at async eO.execute [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:46527[90m)[39m
-    at async eO.handle [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:57112[90m)[39m
-    at async doRender [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1352:42[90m)[39m
-    at async cacheEntry.responseCache.get.routeKind [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1562:40[90m)[39m
-    at async DevServer.renderToResponseWithComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1482:28[90m)[39m
-    at async DevServer.renderPageComponent [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1908:24[90m)[39m
+ [31m[1m⨯[22m[39m SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at loadManifest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-manifest.js:36:25[90m)[39m
+    at getMaybePagePath [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:57:59[90m)[39m
+    at getPagePath [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:92:22[90m)[39m
+    at requirePage [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:99:22[90m)[39m
+    at [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-components.js:98:84
+    at async loadComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-components.js:98:26[90m)[39m
+    at async DevServer.findPageComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/next-server.js:709:36[90m)[39m
+    at async DevServer.findPageComponents [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/dev/next-dev-server.js:577:20[90m)[39m
+    at async DevServer.renderPageComponent [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1894:24[90m)[39m
     at async DevServer.renderToResponseImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1946:32[90m)[39m
     at async DevServer.pipeImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:921:25[90m)[39m
     at async NextNodeServer.handleCatchallRenderRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/next-server.js:272:17[90m)[39m
@@ -136,33 +150,19 @@ Auth error: TypeError: fetch failed
     at async handleRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:350:24[90m)[39m
     at async requestHandlerImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:374:13[90m)[39m
     at async Server.requestListener [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/start-server.js:141:13[90m)[39m {
-  [cause]: AggregateError [ECONNREFUSED]: 
-  [90m    at internalConnectMultiple (node:net:1139:18)[39m
-  [90m    at afterConnectMultiple (node:net:1712:7)[39m
-  [90m    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)[39m {
-    code: [32m'ECONNREFUSED'[39m,
-    [errors]: [ [36m[Error][39m, [36m[Error][39m ]
-  }
+  page: [32m'/api/auth/session'[39m
 }
- POST /api/auth/callback/credentials [33m401[39m in 5ms
- GET /api/auth/providers [32m200[39m in 8ms
- GET /api/auth/csrf [32m200[39m in 6ms
-Auth error: TypeError: fetch failed
-[90m    at node:internal/deps/undici/undici:13502:13[39m
-[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
-    at async loginService (webpack-internal:///(rsc)/./src/app/components/service/auth.service.js:7:17)
-    at async Object.authorize (webpack-internal:///(rsc)/./src/app/api/auth/[...nextauth]/authOptions.js:33:43)
-    at async Object.callback (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/routes/callback.js:328:14)
-    at async AuthHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/index.js:260:28)
-    at async NextAuthRouteHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:57:28)
-    at async NextAuth._args$ (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:89:16)
-    at async [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:55778
-    at async eO.execute [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:46527[90m)[39m
-    at async eO.handle [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:57112[90m)[39m
-    at async doRender [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1352:42[90m)[39m
-    at async cacheEntry.responseCache.get.routeKind [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1562:40[90m)[39m
-    at async DevServer.renderToResponseWithComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1482:28[90m)[39m
-    at async DevServer.renderPageComponent [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1908:24[90m)[39m
+ [31m[1m⨯[22m[39m SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at loadManifest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-manifest.js:36:25[90m)[39m
+    at getMaybePagePath [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:57:59[90m)[39m
+    at getPagePath [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:92:22[90m)[39m
+    at requirePage [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/require.js:99:22[90m)[39m
+    at [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-components.js:98:84
+    at async loadComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/load-components.js:98:26[90m)[39m
+    at async DevServer.findPageComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/next-server.js:709:36[90m)[39m
+    at async DevServer.findPageComponents [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/dev/next-dev-server.js:577:20[90m)[39m
+    at async DevServer.renderPageComponent [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1894:24[90m)[39m
     at async DevServer.renderToResponseImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1946:32[90m)[39m
     at async DevServer.pipeImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:921:25[90m)[39m
     at async NextNodeServer.handleCatchallRenderRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/next-server.js:272:17[90m)[39m
@@ -174,174 +174,262 @@ Auth error: TypeError: fetch failed
     at async handleRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:350:24[90m)[39m
     at async requestHandlerImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:374:13[90m)[39m
     at async Server.requestListener [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/start-server.js:141:13[90m)[39m {
-  [cause]: AggregateError [ECONNREFUSED]: 
-  [90m    at internalConnectMultiple (node:net:1139:18)[39m
-  [90m    at afterConnectMultiple (node:net:1712:7)[39m
-  [90m    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)[39m {
-    code: [32m'ECONNREFUSED'[39m,
-    [errors]: [ [36m[Error][39m, [36m[Error][39m ]
-  }
+  page: [32m'/api/auth/session'[39m
 }
- POST /api/auth/callback/credentials [33m401[39m in 8ms
- GET /api/auth/providers [32m200[39m in 7ms
- GET /api/auth/csrf [32m200[39m in 3ms
-Auth error: TypeError: fetch failed
-[90m    at node:internal/deps/undici/undici:13502:13[39m
-[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
-    at async loginService (webpack-internal:///(rsc)/./src/app/components/service/auth.service.js:7:17)
-    at async Object.authorize (webpack-internal:///(rsc)/./src/app/api/auth/[...nextauth]/authOptions.js:33:43)
-    at async Object.callback (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/routes/callback.js:328:14)
-    at async AuthHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/index.js:260:28)
-    at async NextAuthRouteHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:57:28)
-    at async NextAuth._args$ (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:89:16)
-    at async [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:55778
-    at async eO.execute [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:46527[90m)[39m
-    at async eO.handle [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:57112[90m)[39m
-    at async doRender [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1352:42[90m)[39m
-    at async cacheEntry.responseCache.get.routeKind [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1562:40[90m)[39m
-    at async DevServer.renderToResponseWithComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1482:28[90m)[39m
-    at async DevServer.renderPageComponent [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1908:24[90m)[39m
-    at async DevServer.renderToResponseImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1946:32[90m)[39m
-    at async DevServer.pipeImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:921:25[90m)[39m
-    at async NextNodeServer.handleCatchallRenderRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/next-server.js:272:17[90m)[39m
-    at async DevServer.handleRequestImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:817:17[90m)[39m
-    at async [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/dev/next-dev-server.js:339:20
-    at async Span.traceAsyncFn [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/trace/trace.js:154:20[90m)[39m
-    at async DevServer.handleRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/dev/next-dev-server.js:336:24[90m)[39m
-    at async invokeRender [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:173:21[90m)[39m
-    at async handleRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:350:24[90m)[39m
-    at async requestHandlerImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:374:13[90m)[39m
-    at async Server.requestListener [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/start-server.js:141:13[90m)[39m {
-  [cause]: AggregateError [ECONNREFUSED]: 
-  [90m    at internalConnectMultiple (node:net:1139:18)[39m
-  [90m    at afterConnectMultiple (node:net:1712:7)[39m
-  [90m    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)[39m {
-    code: [32m'ECONNREFUSED'[39m,
-    [errors]: [ [36m[Error][39m, [36m[Error][39m ]
-  }
-}
- POST /api/auth/callback/credentials [33m401[39m in 5ms
- GET /api/auth/providers [32m200[39m in 53ms
- GET /api/auth/csrf [32m200[39m in 6ms
-Auth error: TypeError: fetch failed
-[90m    at node:internal/deps/undici/undici:13502:13[39m
-[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
-    at async loginService (webpack-internal:///(rsc)/./src/app/components/service/auth.service.js:7:17)
-    at async Object.authorize (webpack-internal:///(rsc)/./src/app/api/auth/[...nextauth]/authOptions.js:33:43)
-    at async Object.callback (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/routes/callback.js:328:14)
-    at async AuthHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/core/index.js:260:28)
-    at async NextAuthRouteHandler (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:57:28)
-    at async NextAuth._args$ (webpack-internal:///(rsc)/./node_modules/[4mnext-auth[24m/next/index.js:89:16)
-    at async [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:55778
-    at async eO.execute [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:46527[90m)[39m
-    at async eO.handle [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/compiled/next-server/app-route.runtime.dev.js:6:57112[90m)[39m
-    at async doRender [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1352:42[90m)[39m
-    at async cacheEntry.responseCache.get.routeKind [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1562:40[90m)[39m
-    at async DevServer.renderToResponseWithComponentsImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1482:28[90m)[39m
-    at async DevServer.renderPageComponent [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1908:24[90m)[39m
-    at async DevServer.renderToResponseImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:1946:32[90m)[39m
-    at async DevServer.pipeImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:921:25[90m)[39m
-    at async NextNodeServer.handleCatchallRenderRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/next-server.js:272:17[90m)[39m
-    at async DevServer.handleRequestImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/base-server.js:817:17[90m)[39m
-    at async [90m/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/dev/next-dev-server.js:339:20
-    at async Span.traceAsyncFn [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/trace/trace.js:154:20[90m)[39m
-    at async DevServer.handleRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/dev/next-dev-server.js:336:24[90m)[39m
-    at async invokeRender [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:173:21[90m)[39m
-    at async handleRequest [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:350:24[90m)[39m
-    at async requestHandlerImpl [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/router-server.js:374:13[90m)[39m
-    at async Server.requestListener [90m(/Users/sotsirymony/Desktop/Block Chain Assignment/All In One Source/ownership-ui-master/[39mnode_modules/[4mnext[24m/dist/server/lib/start-server.js:141:13[90m)[39m {
-  [cause]: AggregateError [ECONNREFUSED]: 
-  [90m    at internalConnectMultiple (node:net:1139:18)[39m
-  [90m    at afterConnectMultiple (node:net:1712:7)[39m
-  [90m    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)[39m {
-    code: [32m'ECONNREFUSED'[39m,
-    [errors]: [ [36m[Error][39m, [36m[Error][39m ]
-  }
-}
- POST /api/auth/callback/credentials [33m401[39m in 11ms
- GET / [32m200[39m in 239ms
- GET /api/auth/session [32m200[39m in 8ms
- GET /api/auth/session [32m200[39m in 4ms
- GET /api/auth/providers [32m200[39m in 12ms
- GET /api/auth/csrf [32m200[39m in 6ms
+ [32m[1m✓[22m[39m Compiled /src/middleware in 321ms (72 modules)
+ [37m[1m○[22m[39m Compiling /user/asset ...
+ GET /api/auth/session [31m500[39m in 1445ms
+ GET /api/auth/session [31m500[39m in 1623ms
+ [32m[1m✓[22m[39m Compiled /user/asset in 3.1s (9570 modules)
+ GET /api/auth/session [31m500[39m in 3261ms
+ GET /api/auth/session [31m500[39m in 3261ms
+ GET /api/auth/providers [32m200[39m in 1695ms
+ GET /api/auth/providers [32m200[39m in 1695ms
+ GET / [32m200[39m in 1807ms
+ GET / [32m200[39m in 1811ms
+ POST /api/auth/_log [32m200[39m in 114ms
+ POST /api/auth/_log [32m200[39m in 114ms
+ GET /api/auth/csrf [32m200[39m in 62ms
+ GET /api/auth/csrf [32m200[39m in 62ms
 data {
   message: [32m'Login successful'[39m,
   payload: {
-    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE1ODI4MjYsImV4cCI6MTc3MTY2OTIyNn0.XB6bnJvwsZEWgo53sPlBBhGpEwtdU2ZLNl18B5yXxDE'[39m
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY0OTcsImV4cCI6MTc3MTgyMjg5N30.T_8cvCJr_qI8fIcBcp0z8LWENB-EAEzElhJuSmKA8-k'[39m
   },
   httpStatus: [32m'OK'[39m,
-  timestamp: [32m'2026-02-20T10:20:26.991+00:00'[39m
+  timestamp: [32m'2026-02-22T05:01:37.507+00:00'[39m
 }
- POST /api/auth/callback/credentials [32m200[39m in 456ms
- GET /api/auth/session [32m200[39m in 9ms
- [32m[1m✓[22m[39m Compiled /src/middleware in 247ms (72 modules)
- [37m[1m○[22m[39m Compiling /user/asset ...
- [32m[1m✓[22m[39m Compiled /user/asset in 1677ms (9345 modules)
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY0OTcsImV4cCI6MTc3MTgyMjg5N30.T_8cvCJr_qI8fIcBcp0z8LWENB-EAEzElhJuSmKA8-k'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:01:37.507+00:00'[39m
+}
+ POST /api/auth/callback/credentials [32m200[39m in 597ms
+ POST /api/auth/callback/credentials [32m200[39m in 598ms
+ GET /api/auth/session [32m200[39m in 27ms
+ GET /api/auth/session [32m200[39m in 27ms
+ GET /api/auth/session [32m200[39m in 24ms
+ GET /api/auth/session [32m200[39m in 25ms
+ GET /api/auth/session [32m200[39m in 47ms
+ GET /api/auth/session [32m200[39m in 47ms
  [37m[1m○[22m[39m Compiling /admin/dashboard ...
- [32m[1m✓[22m[39m Compiled /admin/dashboard in 986ms (9375 modules)
- [37m[1m○[22m[39m Compiling /_not-found ...
- [32m[1m✓[22m[39m Compiled /_not-found in 769ms (9378 modules)
- GET /admin/seed-report-attachment [33m404[39m in 1029ms
- [37m[1m○[22m[39m Compiling /admin/asset ...
- [32m[1m✓[22m[39m Compiled /admin/asset in 631ms (9405 modules)
- GET /admin/seed-attachment [33m404[39m in 232ms
- [37m[1m○[22m[39m Compiling /admin/asset/show/[id] ...
- [32m[1m✓[22m[39m Compiled /admin/asset/show/[id] in 2.6s (9416 modules)
-Record [90mundefined[39m
-Record [90mundefined[39m
+ [32m[1m✓[22m[39m Compiled /admin/dashboard in 2.2s (9600 modules)
+ GET /api/auth/session [32m200[39m in 2221ms
+ GET /api/auth/session [32m200[39m in 2221ms
+ GET /api/auth/providers [32m200[39m in 1077ms
+ GET /api/auth/providers [32m200[39m in 1077ms
+ GET /api/auth/csrf [32m200[39m in 25ms
+ GET /api/auth/csrf [32m200[39m in 24ms
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY1MDAsImV4cCI6MTc3MTgyMjkwMH0.gOcN3N6eGKN2kLZuliRMcBnh9qYisEaYA9kxtK7SQ5c'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:01:40.170+00:00'[39m
+}
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY1MDAsImV4cCI6MTc3MTgyMjkwMH0.gOcN3N6eGKN2kLZuliRMcBnh9qYisEaYA9kxtK7SQ5c'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:01:40.170+00:00'[39m
+}
+ POST /api/auth/callback/credentials [32m200[39m in 237ms
+ POST /api/auth/callback/credentials [32m200[39m in 239ms
+ GET /api/auth/session [32m200[39m in 45ms
+ GET /api/auth/session [32m200[39m in 49ms
+ GET /api/auth/session [32m200[39m in 49ms
+ GET /api/auth/session [32m200[39m in 50ms
 Warning: [antd: Menu] `children` is deprecated. Please use `items` instead.
- GET /admin/asset/show/seed-attachment [32m200[39m in 578ms
- [37m[1m○[22m[39m Compiling /admin/history ...
- [32m[1m✓[22m[39m Compiled /admin/history in 1015ms (9440 modules)
- GET /admin/seed-attachment [33m404[39m in 192ms
- [37m[1m○[22m[39m Compiling /admin/report-issue ...
- [32m[1m✓[22m[39m Compiled /admin/report-issue in 1121ms (9136 modules)
- GET /admin/seed-report-attachment [33m404[39m in 130ms
- GET /admin/seed-report-attachment [33m404[39m in 36ms
- [37m[1m○[22m[39m Compiling /admin/asset-request ...
- [32m[1m✓[22m[39m Compiled /admin/asset-request in 968ms (9139 modules)
- GET /admin/seed-attachment [33m404[39m in 290ms
- [37m[1m○[22m[39m Compiling /admin/department ...
- [32m[1m✓[22m[39m Compiled /admin/department in 901ms (9155 modules)
- [37m[1m○[22m[39m Compiling /admin/user ...
- [32m[1m✓[22m[39m Compiled /admin/user in 843ms (9169 modules)
- [37m[1m○[22m[39m Compiling /admin/user/show/[id] ...
- [32m[1m✓[22m[39m Compiled /admin/user/show/[id] in 869ms (9187 modules)
- GET /admin/seed-report-attachment [33m404[39m in 155ms
- GET /admin/seed-attachment [33m404[39m in 89ms
- GET /admin/seed-attachment [33m404[39m in 48ms
- [32m[1m✓[22m[39m Compiled /admin/dashboard in 387ms (4198 modules)
- [32m[1m✓[22m[39m Compiled /admin/history in 465ms (4208 modules)
- GET /admin/seed-report-attachment [33m404[39m in 323ms
- [32m[1m✓[22m[39m Compiled in 9.6s (9181 modules)
-Warning: [antd: Menu] `children` is deprecated. Please use `items` instead.
- GET /admin/dashboard [32m200[39m in 424ms
- [37m[1m○[22m[39m Compiling /api/auth/[...nextauth] ...
- [32m[1m✓[22m[39m Compiled /api/auth/[...nextauth] in 1039ms (4479 modules)
- GET /api/auth/session [32m200[39m in 1133ms
- GET /api/auth/session [32m200[39m in 12ms
- [32m[1m✓[22m[39m Compiled /_not-found in 405ms (4481 modules)
- GET /admin/seed-report-attachment [33m404[39m in 647ms
- [37m[1m○[22m[39m Compiling /admin/asset-request ...
- [32m[1m✓[22m[39m Compiled /admin/asset-request in 562ms (4491 modules)
-Warning: [antd: Menu] `children` is deprecated. Please use `items` instead.
- GET /admin/asset-request?pageSize=10&current=1 [32m200[39m in 275ms
- GET /api/auth/session [32m200[39m in 46ms
- GET /api/auth/session [32m200[39m in 17ms
- [32m[1m✓[22m[39m Compiled /admin/report-issue in 381ms (4499 modules)
- GET /admin/seed-report-attachment [33m404[39m in 108ms
- GET /admin/seed-report-attachment [33m404[39m in 82ms
- GET /admin/seed-report-attachment [33m404[39m in 101ms
- GET /admin/seed-attachment [33m404[39m in 58ms
- [37m[1m○[22m[39m Compiling /admin/asset/show/[id] ...
- [32m[1m✓[22m[39m Compiled /admin/asset/edit/[id] in 1326ms (4181 modules)
- [32m[1m✓[22m[39m Compiled in 2.5s (4990 modules)
-Recorders [90mundefined[39m
- GET /admin/seed-attachment [33m404[39m in 272ms
- GET /admin/seed-attachment [33m404[39m in 61ms
- [32m[1m✓[22m[39m Compiled /api/auth/[...nextauth] in 389ms (4477 modules)
- GET /api/auth/session [32m200[39m in 489ms
+ GET /admin/dashboard [32m200[39m in 503ms
+ GET /admin/dashboard [32m200[39m in 740ms
+ GET /admin/dashboard [32m200[39m in 743ms
+ GET /admin/dashboard [32m200[39m in 747ms
+ GET /api/auth/session [32m200[39m in 468ms
+ GET /api/auth/session [32m200[39m in 89ms
+ GET /api/auth/session [32m200[39m in 92ms
  GET /api/auth/session [32m200[39m in 85ms
- [37m[1m○[22m[39m Compiling / ...
- [32m[1m✓[22m[39m Compiled / in 1837ms (4186 modules)
- GET / [32m200[39m in 1998ms
+ GET /api/auth/session [32m200[39m in 93ms
+ GET /api/auth/session [32m200[39m in 81ms
+ GET /api/auth/session [32m200[39m in 84ms
+ GET /api/auth/session [32m200[39m in 86ms
+ [37m[1m○[22m[39m Compiling /admin/asset ...
+ [32m[1m✓[22m[39m Compiled /admin/asset in 3.7s (9678 modules)
+ GET / [32m200[39m in 3673ms
+ GET / [32m200[39m in 3194ms
+ GET /api/auth/session [32m200[39m in 82ms
+ GET /api/auth/session [32m200[39m in 70ms
+ GET /api/auth/session [32m200[39m in 33ms
+ GET /api/auth/session [32m200[39m in 32ms
+ GET / [32m200[39m in 247ms
+ GET / [32m200[39m in 235ms
+ GET / [32m200[39m in 299ms
+ GET /api/auth/providers [32m200[39m in 137ms
+ GET /api/auth/providers [32m200[39m in 136ms
+ GET /api/auth/csrf [32m200[39m in 95ms
+ GET /api/auth/csrf [32m200[39m in 95ms
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY1MTYsImV4cCI6MTc3MTgyMjkxNn0.UYt79nBoVG8O0tY7O00bW1pPHHoXqUlgLx3hY7HG25g'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:01:56.780+00:00'[39m
+}
+ POST /api/auth/callback/credentials [32m200[39m in 302ms
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY1MTYsImV4cCI6MTc3MTgyMjkxNn0.UYt79nBoVG8O0tY7O00bW1pPHHoXqUlgLx3hY7HG25g'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:01:56.779+00:00'[39m
+}
+ POST /api/auth/callback/credentials [32m200[39m in 306ms
+ GET /api/auth/session [32m200[39m in 78ms
+ GET /api/auth/session [32m200[39m in 80ms
+ GET /api/auth/session [32m200[39m in 59ms
+ GET /api/auth/session [32m200[39m in 58ms
+ GET /api/auth/session [32m200[39m in 91ms
+ GET /api/auth/session [32m200[39m in 68ms
+ GET /api/auth/session [32m200[39m in 67ms
+ GET /api/auth/session [32m200[39m in 28ms
+ GET /api/auth/session [32m200[39m in 31ms
+ GET /api/auth/session [32m200[39m in 31ms
+ GET /api/auth/providers [32m200[39m in 49ms
+ GET /api/auth/providers [32m200[39m in 66ms
+ GET /api/auth/csrf [32m200[39m in 75ms
+ GET /api/auth/providers [32m200[39m in 34ms
+ GET /api/auth/csrf [32m200[39m in 32ms
+ GET /api/auth/csrf [32m200[39m in 24ms
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY1MTgsImV4cCI6MTc3MTgyMjkxOH0._d3wtF1Tz58Y5eEzir1BqzKMceBMtGLhwFM6QNPX5uY'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:01:58.126+00:00'[39m
+}
+ POST /api/auth/callback/credentials [32m200[39m in 204ms
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY1MTgsImV4cCI6MTc3MTgyMjkxOH0._d3wtF1Tz58Y5eEzir1BqzKMceBMtGLhwFM6QNPX5uY'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:01:58.145+00:00'[39m
+}
+ POST /api/auth/callback/credentials [32m200[39m in 204ms
+ GET /api/auth/session [32m200[39m in 32ms
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY1MTgsImV4cCI6MTc3MTgyMjkxOH0._d3wtF1Tz58Y5eEzir1BqzKMceBMtGLhwFM6QNPX5uY'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:01:58.175+00:00'[39m
+}
+ POST /api/auth/callback/credentials [32m200[39m in 214ms
+ GET /api/auth/session [32m200[39m in 81ms
+ GET /api/auth/session [32m200[39m in 91ms
+ GET /api/auth/session [32m200[39m in 43ms
+ GET /api/auth/session [32m200[39m in 31ms
+ GET /api/auth/session [32m200[39m in 21ms
+Warning: [antd: Menu] `children` is deprecated. Please use `items` instead.
+ GET /admin/asset [32m200[39m in 1065ms
+ GET /admin/asset [32m200[39m in 1069ms
+ GET /user/asset [32m200[39m in 441ms
+ GET /user/asset [32m200[39m in 446ms
+ GET /admin/asset [32m200[39m in 505ms
+ GET /api/auth/session [32m200[39m in 110ms
+ GET /api/auth/session [32m200[39m in 99ms
+ GET /api/auth/session [32m200[39m in 116ms
+ GET /api/auth/session [32m200[39m in 118ms
+ GET /api/auth/session [32m200[39m in 64ms
+ GET /api/auth/session [32m200[39m in 107ms
+ GET /api/auth/session [32m200[39m in 58ms
+ GET /api/auth/session [32m200[39m in 66ms
+ GET /api/auth/session [32m200[39m in 32ms
+ GET /api/auth/session [32m200[39m in 32ms
+ GET / [32m200[39m in 49ms
+ GET / [32m200[39m in 56ms
+ GET /api/auth/session [32m200[39m in 20ms
+ GET /api/auth/session [32m200[39m in 35ms
+ GET /api/auth/session [32m200[39m in 24ms
+ GET /api/auth/session [32m200[39m in 10ms
+ [37m[1m○[22m[39m Compiling /user/asset-request ...
+ [32m[1m✓[22m[39m Compiled /user/asset-request in 6.7s (9705 modules)
+ GET /api/auth/providers [32m200[39m in 6495ms
+ GET /api/auth/providers [32m200[39m in 6495ms
+Warning: [antd: Menu] `children` is deprecated. Please use `items` instead.
+ GET / [32m200[39m in 7170ms
+ GET / [32m200[39m in 7201ms
+ GET /user/asset-request [32m200[39m in 7304ms
+ GET /api/auth/csrf [32m200[39m in 368ms
+ GET /api/auth/csrf [32m200[39m in 368ms
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY1MzMsImV4cCI6MTc3MTgyMjkzM30.9RDRjif1EyZoIOz2yXGULgRxrAgOynap-hXz1BcnfTA'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:02:13.239+00:00'[39m
+}
+ POST /api/auth/callback/credentials [32m200[39m in 221ms
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY1MzMsImV4cCI6MTc3MTgyMjkzM30.9RDRjif1EyZoIOz2yXGULgRxrAgOynap-hXz1BcnfTA'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:02:13.240+00:00'[39m
+}
+ POST /api/auth/callback/credentials [32m200[39m in 224ms
+ GET /api/auth/session [32m200[39m in 60ms
+ GET /api/auth/session [32m200[39m in 64ms
+ GET /api/auth/session [32m200[39m in 50ms
+ GET /api/auth/session [32m200[39m in 53ms
+ GET /api/auth/session [32m200[39m in 29ms
+ GET /api/auth/session [32m200[39m in 28ms
+ GET /api/auth/session [32m200[39m in 19ms
+ GET /api/auth/session [32m200[39m in 18ms
+ GET /api/auth/providers [32m200[39m in 22ms
+ GET / [32m200[39m in 48ms
+ GET /api/auth/csrf [32m200[39m in 37ms
+ GET /api/auth/session [32m200[39m in 33ms
+ GET / [32m200[39m in 49ms
+data {
+  message: [32m'Login successful'[39m,
+  payload: {
+    token: [32m'eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRhS1RodkVoNDdMaWxJdFYxMksxNk11S2tDTEJaLkVqM1NFZ0dXMFRUQUouVGJGOGJLaG9EZSIsInJvbGUiOiJBRE1JTiIsInVzZXJJZCI6MSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3NzE3MzY1MzQsImV4cCI6MTc3MTgyMjkzNH0.LAM8g5fURZLknfRhzBhi3HJjTIF_iyzTH66TiZAN6-g'[39m
+  },
+  httpStatus: [32m'OK'[39m,
+  timestamp: [32m'2026-02-22T05:02:14.595+00:00'[39m
+}
+ POST /api/auth/callback/credentials [32m200[39m in 232ms
+ GET /api/auth/session [32m200[39m in 32ms
+ GET /api/auth/session [32m200[39m in 27ms
+ GET /api/auth/session [32m200[39m in 34ms
+ GET /api/auth/session [32m200[39m in 19ms
+ GET /api/auth/session [32m200[39m in 11ms
+ GET /api/auth/session [32m200[39m in 13ms
+ GET /user/asset [32m200[39m in 127ms
+ [37m[1m○[22m[39m Compiling /admin/asset/show/[id] ...
+ [32m[1m✓[22m[39m Compiled /admin/asset/show/[id] in 1195ms (9716 modules)
+ GET /api/auth/session [32m200[39m in 29ms
+ GET /api/auth/session [32m200[39m in 6ms
+Record [90mundefined[39m
+Warning: [antd: Menu] `children` is deprecated. Please use `items` instead.
+ GET /admin/asset/show/nonexistent-id-12345 [32m200[39m in 1974ms
+ GET /api/auth/session [32m200[39m in 7ms
+ GET /api/auth/session [32m200[39m in 9ms
+ [37m[1m○[22m[39m Compiling /user/report-issue ...
+ [32m[1m✓[22m[39m Compiled /user/report-issue in 1281ms (9739 modules)
+Warning: [antd: Menu] `children` is deprecated. Please use `items` instead.
+ GET /user/report-issue [32m200[39m in 1554ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOSPC: no space left on device, write

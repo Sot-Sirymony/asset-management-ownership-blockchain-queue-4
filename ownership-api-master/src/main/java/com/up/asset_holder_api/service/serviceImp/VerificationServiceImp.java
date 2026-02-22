@@ -39,6 +39,10 @@ public class VerificationServiceImp implements VerificationService {
     public JsonNode verifyAssetInternal(String assetId) {
         log.info("Internal verification requested for asset: {}", assetId);
         UserRequestResponse user = userRepository.findUserById(GetCurrentUser.currentId());
+        if (user == null) {
+            log.warn("Current user not found for verification, userId from context");
+            throw new NotFoundException("Current user not found");
+        }
 
         try {
             JsonNode asset = assetService.getAssetById(assetId);
@@ -72,6 +76,10 @@ public class VerificationServiceImp implements VerificationService {
     public JsonNode verifyAssetExternal(String assetId) {
         log.info("External verification requested for asset: {}", assetId);
         UserRequestResponse user = userRepository.findUserById(GetCurrentUser.currentId());
+        if (user == null) {
+            log.warn("Current user not found for verification, userId from context");
+            throw new NotFoundException("Current user not found");
+        }
 
         try {
             JsonNode asset = assetService.getAssetById(assetId);

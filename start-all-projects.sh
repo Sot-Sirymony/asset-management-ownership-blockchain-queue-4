@@ -317,6 +317,40 @@ fi
 ensure_local_postgres
 bootstrap_local_postgres_schema
 
+# Wallet path for Fabric gateway identity (must match API working directory or be absolute)
+if [ -z "${WALLET_PATH:-}" ]; then
+    export WALLET_PATH="$API_DIR/wallet"
+    echo -e "${GREEN}✅ Using WALLET_PATH: $WALLET_PATH${NC}"
+fi
+
+# Fabric crypto path and peer/orderer URLs when API runs on host (connection.yaml uses Docker paths/hostnames)
+if [ -z "${FABRIC_CRYPTO_PATH:-}" ]; then
+    export FABRIC_CRYPTO_PATH="$NETWORK_DIR/channel"
+    echo -e "${GREEN}✅ Using FABRIC_CRYPTO_PATH: $FABRIC_CRYPTO_PATH${NC}"
+fi
+if [ -z "${FABRIC_PEER_URL:-}" ]; then
+    export FABRIC_PEER_URL="grpcs://localhost:7051"
+    echo -e "${GREEN}✅ Using FABRIC_PEER_URL: $FABRIC_PEER_URL${NC}"
+fi
+if [ -z "${FABRIC_ORDERER_URL:-}" ]; then
+    export FABRIC_ORDERER_URL="grpcs://localhost:7050"
+    echo -e "${GREEN}✅ Using FABRIC_ORDERER_URL: $FABRIC_ORDERER_URL${NC}"
+fi
+if [ -z "${FABRIC_CHANNEL:-}" ]; then
+    export FABRIC_CHANNEL=channel-org
+    echo -e "${GREEN}✅ Using FABRIC_CHANNEL: $FABRIC_CHANNEL${NC}"
+fi
+# Avoid "peers with the 'discover' role" error when running on host (single peer, no discovery)
+if [ -z "${FABRIC_DISCOVERY:-}" ]; then
+    export FABRIC_DISCOVERY=false
+    echo -e "${GREEN}✅ Using FABRIC_DISCOVERY: $FABRIC_DISCOVERY${NC}"
+fi
+# CouchDB is port-mapped 5984; from host use localhost (Docker uses couchdb0)
+if [ -z "${COUCHDB_BASE_URL:-}" ]; then
+    export COUCHDB_BASE_URL="http://localhost:5984"
+    echo -e "${GREEN}✅ Using COUCHDB_BASE_URL: $COUCHDB_BASE_URL${NC}"
+fi
+
 # Use local Fabric CA certificate path when running API outside Docker
 if [ -z "${FABRIC_CA_PEM_FILE:-}" ]; then
     if [ -f "$FABRIC_LOCAL_CA_CERT" ]; then

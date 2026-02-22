@@ -3,6 +3,8 @@ package com.up.asset_holder_api.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.up.asset_holder_api.configuration.BeanConfig;
 import com.up.asset_holder_api.configuration.SecurityConfig;
+import com.up.asset_holder_api.exception.GlobalExceptionHandle;
+import com.up.asset_holder_api.exception.NotFoundException;
 import com.up.asset_holder_api.jwt.JwtAuthEntrypoint;
 import com.up.asset_holder_api.jwt.JwtAuthFilter;
 import com.up.asset_holder_api.jwt.JwtUtil;
@@ -25,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(controllers = AuthController.class)
-@Import({SecurityConfig.class, BeanConfig.class, JwtAuthFilter.class, JwtAuthEntrypoint.class})
+@Import({SecurityConfig.class, BeanConfig.class, JwtAuthFilter.class, JwtAuthEntrypoint.class, GlobalExceptionHandle.class})
 class AuthControllerTest {
 
     @Autowired
@@ -57,5 +59,18 @@ class AuthControllerTest {
                 .andExpect(jsonPath("$.payload.token").value("fake-jwt-token"))
                 .andExpect(jsonPath("$.httpStatus").value("OK"))
                 .andExpect(jsonPath("$.timestamp").exists());
+    }
+
+    @Test
+    void loginFailure_returnsNotFoundWithMessage() throws Exception {
+        LoginReq req = LoginReq.builder().username("unknown").password("wrong").build();
+        when(authService.login(any(LoginReq.class))).thenThrow(new NotFoundException("Password incorrect"));
+
+        mockMvc.perform(post("/rest/auth/login")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(req)))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.detail").value("Password incorrect"))
+                .andExpect(jsonPath("$.title").value("Not Found"));
     }
 }

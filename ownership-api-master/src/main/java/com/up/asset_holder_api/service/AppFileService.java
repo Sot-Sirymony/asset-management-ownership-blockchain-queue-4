@@ -10,4 +10,5 @@ import java.io.IOException;
 public interface AppFileService {
     String saveFile(MultipartFile file) throws IOException;
     Resource getFileByFileName(String fileName) throws IOException;
+    java.util.List<String> listFileNames();
 }

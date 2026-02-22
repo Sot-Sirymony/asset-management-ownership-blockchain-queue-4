@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/files")
@@ -36,9 +37,17 @@ public class AppFileController {
         return ResponseEntity.ok(response);
     }
     @GetMapping()
-    public ResponseEntity<?> getFile(@RequestParam String fileName) throws IOException {
-
-        Resource resource = appFileService.getFileByFileName(fileName);
+    public ResponseEntity<?> getFileOrList(@RequestParam(required = false) String fileName) throws IOException {
+        if (fileName == null || fileName.isBlank()) {
+            List<String> names = appFileService.listFileNames();
+            FileUploadResponse<List<String>> response = FileUploadResponse.<List<String>>builder()
+                    .message("success")
+                    .httpStatus(HttpStatus.OK)
+                    .payload(names)
+                    .build();
+            return ResponseEntity.ok(response);
+        }
+        Resource resource = appFileService.getFileByFileName(fileName.trim());
         MediaType mediaType;
         if (fileName.endsWith(".pdf")) {
             mediaType = MediaType.APPLICATION_PDF;
@@ -51,6 +60,5 @@ public class AppFileController {
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + fileName + "\"")
                 .contentType(mediaType).body(resource);
-
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppIcon } from '../app-icon';
 import { useRouter } from 'next/navigation';
-import { signIn, useSession } from 'next-auth/react';
+import { signIn, getSession, useSession } from 'next-auth/react';
 import { authInfoGlobal } from '../store/authentication';
 import { useForm } from 'react-hook-form';
 import { loginService } from '../service/auth.service';
@@ -39,11 +39,13 @@ export default function LoginPopup({ onClose }) {
                         className: "success-toast",
                     }).showToast();
                     setUsername(data.username);
-                        if(role == "ADMIN"){
-                            router.push("/admin/dashboard") 
-                        }
-                        router.push("/user/asset")
-                        
+                    const updatedSession = await getSession();
+                    const userRole = updatedSession?.user?.role;
+                    if (userRole === "ADMIN") {
+                        router.push("/admin/dashboard");
+                    } else {
+                        router.push("/user/asset");
+                    }
                     router.refresh();
                     onClose();
                 } else {

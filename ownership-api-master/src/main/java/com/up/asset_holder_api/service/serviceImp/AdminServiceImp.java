@@ -1,5 +1,6 @@
 package com.up.asset_holder_api.service.serviceImp;
 
+import com.up.asset_holder_api.helper.FabricCaPemResolver;
 import com.up.asset_holder_api.repository.UserRepository;
 import com.up.asset_holder_api.service.AdminService;
 import org.hyperledger.fabric.gateway.Identities;
@@ -49,8 +50,9 @@ public class AdminServiceImp implements AdminService {
     @EventListener(ApplicationReadyEvent.class)
     @Override
     public void enrollService() {
+        String resolvedPemFile = FabricCaPemResolver.resolvePemFilePath(pemFile);
         Properties props = new Properties();
-        props.put("pemFile", pemFile);
+        props.put("pemFile", resolvedPemFile);
         props.put("allowAllHostNames", "true");
 
         try {

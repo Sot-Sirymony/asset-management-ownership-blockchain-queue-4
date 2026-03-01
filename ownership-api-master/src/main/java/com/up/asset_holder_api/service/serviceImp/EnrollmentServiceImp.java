@@ -1,6 +1,7 @@
 package com.up.asset_holder_api.service.serviceImp;
 
 import com.up.asset_holder_api.exception.NotFoundException;
+import com.up.asset_holder_api.helper.FabricCaPemResolver;
 import com.up.asset_holder_api.model.request.UserPassword;
 import com.up.asset_holder_api.model.request.UserRegister;
 import com.up.asset_holder_api.model.request.UserRequest;
@@ -50,8 +51,9 @@ public class EnrollmentServiceImp implements EnrollmentService {
     @Override
     public UserRegister registerUser(UserRegister user) {
 
+        String resolvedPemFile = FabricCaPemResolver.resolvePemFilePath(pemFile);
         Properties props = new Properties();
-        props.put("pemFile", pemFile);
+        props.put("pemFile", resolvedPemFile);
         props.put("allowAllHostNames", "true");
 
         try {

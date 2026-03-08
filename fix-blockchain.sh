@@ -82,11 +82,12 @@ else
   echo "No process on 8081."
 fi
 
-# Step 3: Start API with Fabric env (same as start-all-projects.sh)
+# Step 3: Start API with Fabric env (127.0.0.1 for stable TLS; same as restart-api-for-blockchain.sh)
 cd "$API_DIR"
-export FABRIC_CRYPTO_PATH="${FABRIC_CRYPTO_PATH:-$NETWORK_DIR/channel}"
-export FABRIC_PEER_URL="${FABRIC_PEER_URL:-grpcs://localhost:7051}"
-export FABRIC_ORDERER_URL="${FABRIC_ORDERER_URL:-grpcs://localhost:7050}"
+CHANNEL_DIR="$NETWORK_DIR/channel"
+export FABRIC_CRYPTO_PATH="${FABRIC_CRYPTO_PATH:-$(cd "$ROOT_DIR" && cd "$CHANNEL_DIR" && pwd)}"
+export FABRIC_PEER_URL="${FABRIC_PEER_URL:-grpcs://127.0.0.1:7051}"
+export FABRIC_ORDERER_URL="${FABRIC_ORDERER_URL:-grpcs://127.0.0.1:7050}"
 export FABRIC_CHANNEL="${FABRIC_CHANNEL:-channel-org}"
 export FABRIC_DISCOVERY="${FABRIC_DISCOVERY:-false}"
 export WALLET_PATH="${WALLET_PATH:-$API_DIR/wallet}"

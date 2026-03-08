@@ -163,3 +163,48 @@ Warning: [antd: Menu] `children` is deprecated. Please use `items` instead.
  [32m[1m✓[22m[39m Compiled /admin/user in 0ms (4534 modules)
  GET /admin/seed-report-attachment [33m404[39m in 2706ms
  [32m[1m✓[22m[39m Compiled (4549 modules)
+ GET /admin/seed-attachment [33m404[39m in 286ms
+ GET /admin/seed-report-attachment [33m404[39m in 34ms
+ GET /api/auth/session [32m200[39m in 150ms
+ GET /admin/seed-attachment [33m404[39m in 52ms
+ GET /api/auth/session [32m200[39m in 38ms
+ GET /api/auth/session [32m200[39m in 29ms
+ GET /admin/seed-report-attachment [33m404[39m in 61ms
+ GET /default-avatar.png [33m404[39m in 43ms
+ GET /admin/seed-attachment [33m404[39m in 37ms
+ GET /admin/seed-report-attachment [33m404[39m in 34ms
+ GET /admin/seed-attachment [33m404[39m in 37ms
+Warning: [antd: Menu] `children` is deprecated. Please use `items` instead.
+ GET /user/asset?pageSize=10&current=1 [32m200[39m in 233ms
+ GET /api/auth/session [32m200[39m in 21ms
+ GET /api/auth/session [32m200[39m in 14ms
+ GET /api/auth/session [32m200[39m in 14ms
+ GET /admin/seed-attachment [33m404[39m in 43ms
+ [37m[1m○[22m[39m Compiling /admin/asset/create ...
+ [32m[1m✓[22m[39m Compiled /admin/asset/create in 2.5s (4509 modules)
+ GET /api/auth/session [32m200[39m in 153ms
+ GET /admin/seed-attachment [33m404[39m in 308ms
+ [37m[1m○[22m[39m Compiling /user/history ...
+ [32m[1m✓[22m[39m Compiled /user/history in 1385ms (4506 modules)
+ [37m[1m○[22m[39m Compiling /admin/asset/show/[id] ...
+ [32m[1m✓[22m[39m Compiled /admin/asset/show/[id] in 736ms (4497 modules)
+Record [90mundefined[39m
+ GET /api/auth/session [32m200[39m in 44ms
+ GET /api/auth/session [32m200[39m in 50ms
+ GET /admin/seed-attachment [33m404[39m in 244ms
+ GET /admin/seed-attachment [33m404[39m in 35ms
+ GET /admin/seed-attachment [33m404[39m in 56ms
+ GET /admin/seed-attachment [33m404[39m in 59ms
+ GET /api/auth/session [32m200[39m in 44ms
+ GET /api/auth/session [32m200[39m in 33ms
+ [37m[1m○[22m[39m Compiling /admin/department ...
+ [32m[1m✓[22m[39m Compiled /admin/department in 1361ms (4487 modules)
+ GET /api/auth/session [32m200[39m in 92ms
+ [37m[1m○[22m[39m Compiling /admin/user ...
+ [32m[1m✓[22m[39m Compiled /admin/user in 552ms (4493 modules)
+ GET /api/auth/session [32m200[39m in 128ms
+ [37m[1m○[22m[39m Compiling /admin/report-issue ...
+ [32m[1m✓[22m[39m Compiled /admin/report-issue in 2.5s (4491 modules)
+ [32m[1m✓[22m[39m Compiled /_not-found in 335ms (4493 modules)
+ GET /admin/seed-report-attachment [33m404[39m in 625ms
+ GET /admin/seed-report-attachment [33m404[39m in 110ms

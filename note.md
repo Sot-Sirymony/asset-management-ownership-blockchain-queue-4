@@ -33,3 +33,22 @@ HTTP 200 OK
 
 --- Total assets: 1 ---
 sotsirymony@Sots-MacBook-Pro All In One Source % 
+
+
+
+
+
+1. Run the full stack (if not already)
+From repo root:
+sh
+./start-all-projects.sh
+Or API + UI only:
+./start-api-frontend.sh
+./start-api-frontend.sh
+Then open the UI (e.g. http://localhost:3000 or 3002), log in as admin, and try Assign asset at
+http://localhost:3000/admin/asset/create
+2. Confirm Assign asset is stable
+Create an asset, set Assign To, save.
+If it fails (e.g. orderer unreachable), run:
+  ./restart-api-for-blockchain.sh
+  ./restart-api-for-blockchain.sh

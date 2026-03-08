@@ -208,3 +208,5 @@ Record [90mundefined[39m
  [32m[1m✓[22m[39m Compiled /_not-found in 335ms (4493 modules)
  GET /admin/seed-report-attachment [33m404[39m in 625ms
  GET /admin/seed-report-attachment [33m404[39m in 110ms
+ [37m[1m○[22m[39m Compiling /user/asset ...
+ [32m[1m✓[22m[39m Compiled /user/asset in 1577ms (4190 modules)

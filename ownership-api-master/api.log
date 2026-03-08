@@ -2837,3 +2837,20 @@ Caused by: org.hyperledger.fabric.sdk.exception.ProposalException: getConfigBloc
 2026-03-08T15:40:10.618+07:00  INFO 14367 --- [asset_holder_api] [0.0-8081-exec-2] org.hyperledger.fabric.sdk.Channel       : Channel Channel{id: 733, name: channel-org} eventThread started shutdown: false  thread: null 
 2026-03-08T15:40:11.225+07:00  WARN 14367 --- [asset_holder_api] [alhost:4317/...] i.o.exporter.internal.grpc.GrpcExporter  : Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4317
 2026-03-08T15:40:13.585+07:00  INFO 14367 --- [asset_holder_api] [pool-9-thread-1] org.hyperledger.fabric.sdk.Channel       : Channel channel-org eventThread shutting down. shutdown: true  thread: pool-9-thread-1 
+2026-03-08T16:31:11.452+07:00  WARN 14367 --- [asset_holder_api] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m23s548ms).
+2026-03-08T16:43:21.426+07:00  INFO 14367 --- [asset_holder_api] [0.0-8081-exec-2] org.hyperledger.fabric.sdk.Channel       : Channel Channel{id: 740, name: channel-org} eventThread started shutdown: false  thread: null 
+2026-03-08T16:43:22.579+07:00  WARN 14367 --- [asset_holder_api] [alhost:4317/...] i.o.exporter.internal.grpc.GrpcExporter  : Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4317
+2026-03-08T16:43:24.390+07:00  INFO 14367 --- [asset_holder_api] [ool-10-thread-1] org.hyperledger.fabric.sdk.Channel       : Channel channel-org eventThread shutting down. shutdown: true  thread: pool-10-thread-1 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:26 h
+[INFO] Finished at: 2026-03-08T16:43:48+07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.3.0:run (default-cli) on project asset_holder_api: Process terminated with exit code: 137 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
